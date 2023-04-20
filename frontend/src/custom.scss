@@ -1,0 +1,16 @@
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+$primary: #44477a;
+$secondary: "#6272a4";
+$success: #31a96a;
+$info: #8be9fd;
+$warning: #e2cd2f;
+$danger: #ef291a;
+$light: #d6eafa;
+$dark: #181a1e;
+
+$navbar-light-color: $light;
+$navbar-light-hover-color: $dark;
+$navbar-light-active-color: $primary;
+$navbar-light-toggler-icon-bg: $secondary;
+
