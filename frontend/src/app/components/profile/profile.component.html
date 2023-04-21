@@ -1,0 +1,41 @@
+
+<h1 class="text-center" style="color:white">Caught Fishes</h1>
+<carousel>
+  <slide *ngFor="let item of items">
+    <div class="d-flex justify-content-center">
+      <img
+        src="../../../../assets/img/karp.jpg"
+        alt="slide image"
+        class="w-50"
+      />
+    </div>
+    <div class="carousel-caption d-none d-md-block" style="background-color: rgba(255, 255, 255, 0.307); margin:0 10% 0 10%;">
+      <h1>{{ item.species }}</h1>
+      <br />
+      <h2>{{ item.weight }}</h2>
+      <h2>{{ item.length }}</h2>
+      <br />
+      <h4>Date: {{ item.date }}</h4>
+      <h4>Location: {{ item.location }}</h4>
+    </div>
+  </slide>
+</carousel>
+
+<h1 class="text-center" style="color:white">Friends</h1>
+<div class="list-group">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let friend of friends" style="margin-bottom: 20px">
+        <a href="#" class="list-group-item list-group-item-action">
+          <div class="media">
+            <img src="src=../../../../assets/img/person.png" class="mr-3" width="64" width="64" alt="person icon">
+            <div class="media-body">
+              <h5 class="mt-0">{{ friend.name }}</h5>
+              <p>Age: {{ friend.age }}</p>
+              <p>Email: {{ friend.email }}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  

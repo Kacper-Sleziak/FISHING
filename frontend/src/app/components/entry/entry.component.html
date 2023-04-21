@@ -1,0 +1,37 @@
+<h1 class="text-center" style="color:white">New Entry Form</h1>
+<div class="container" style="color:white">
+    <form (ngSubmit)="onSubmit()" #fishForm="ngForm">
+      <div class="form-group">
+        <label for="weight">Weight:</label>
+        <div class="input-group">
+          <input type="number" class="form-control" id="weight" name="weight" [(ngModel)]="fish.weight" required>
+          <div class="input-group-append">
+            <span class="input-group-text">kg</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="length">Length:</label>
+        <div class="input-group">
+          <input type="number" class="form-control" id="length" name="length" [(ngModel)]="fish.length" required>
+          <div class="input-group-append">
+            <span class="input-group-text">cm</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="species">Species:</label>
+        <input type="text" class="form-control" id="species" name="species" [(ngModel)]="fish.species" required>
+      </div>
+      <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" class="form-control" id="date" name="date" [(ngModel)]="fish.date" required>
+      </div>
+      <div class="form-group">
+        <label for="location">Location:</label>
+        <input type="text" class="form-control" id="location" name="location" [(ngModel)]="fish.location" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Fish</button>
+    </form>
+  </div>
+  
