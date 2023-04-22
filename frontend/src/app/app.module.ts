@@ -10,6 +10,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { EntryComponent } from './components/entry/entry.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { LoginComponent } from './components/login/login.component';
     EntryComponent,
     LoginComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, CarouselModule.forRoot(), FormsModule],
+  imports: [BrowserModule, AppRoutingModule, CarouselModule.forRoot(), FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-profile',
@@ -6,14 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent {
-
+  constructor(private http: HttpClient) {}
+  server_ip = 'https://jsonplaceholder.typicode.com/posts';
   showModal = false;
 
+  ngOnInit(): void {
+    this.http.get(this.server_ip).subscribe((data: any) => {
+      console.log(data);
+    });
+  }
+  
   deleteItem(index: number) {
     this.fishes.splice(index, 1);
   }
   openModal(item: any) {
-    console.log(item)
+    console.log(item);
     this.selectedFish = item;
     this.showModal = true;
   }
@@ -23,7 +31,7 @@ export class ProfileComponent {
   }
 
   updateFish() {
-    console.log(this.selectedFish)
+    console.log(this.selectedFish);
   }
 
   selectedFish: any = {
@@ -32,23 +40,23 @@ export class ProfileComponent {
     weight: 0,
     length: 0,
     date: '',
-    location: ''
+    location: '',
   };
 
   fishes = [
     {
       id: 0,
       species: 'Catfish',
-      weight: '5kg',
-      length: '122cm',
+      weight: 5,
+      length: 122,
       date: '2020-01-01',
       location: 'Poland/Wroclaw',
     },
     {
       id: 1,
       species: 'Bass',
-      weight: '2kg',
-      length: '60cm',
+      weight: 2,
+      length: 60,
       date: '2020-02-01',
       location: 'USA/California',
     },
