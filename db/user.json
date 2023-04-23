@@ -1,0 +1,16 @@
+[{
+  "_id": "1",
+  "name": "kacper",
+  "email": "xd",
+  "password": "1234",
+  "entries": [
+    "3",
+    "12",
+    "689",
+    "mjWd0ggxnFT5phLfoQhS",
+    "bMWB7Qw5yjBoKVjCbSy3"
+  ],
+  "friends": [],
+  "admin": false,
+  "_class": "com.example.fishpch.model.User"
+}]

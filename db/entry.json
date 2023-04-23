@@ -1,0 +1,63 @@
+[{
+  "_id": "1",
+  "userId": "1",
+  "weight": "1kg",
+  "date": "10/20/2021",
+  "location": "Poland/Wroclaw",
+  "species": "karas",
+  "_class": "com.example.fishpch.model.Entry"
+},{
+  "_id": "2",
+  "userId": "1",
+  "weight": "1",
+  "length": "1",
+  "date": "10/20/2021",
+  "location": "Poland/Wroclaw",
+  "species": "karas",
+  "_class": "com.example.fishpch.model.Entry"
+},{
+  "_id": "3",
+  "userId": "1",
+  "weight": "1",
+  "length": "1",
+  "date": "10/20/2021",
+  "location": "Poland/Wroclaw",
+  "species": "karas",
+  "_class": "com.example.fishpch.model.Entry"
+},{
+  "_id": "12",
+  "userId": "1",
+  "weight": "1",
+  "length": "1",
+  "date": "10/20/2021",
+  "location": "Poland/Wroclaw",
+  "species": "karas",
+  "_class": "com.example.fishpch.model.Entry"
+},{
+  "_id": "689",
+  "userId": "1",
+  "weight": "1",
+  "length": "1",
+  "date": "10/20/2021",
+  "location": "Poland/Wroclaw",
+  "species": "karas",
+  "_class": "com.example.fishpch.model.Entry"
+},{
+  "_id": "mjWd0ggxnFT5phLfoQhS",
+  "userId": "1",
+  "weight": "0",
+  "length": "0",
+  "date": "",
+  "location": "",
+  "species": "",
+  "_class": "com.example.fishpch.model.Entry"
+},{
+  "_id": "bMWB7Qw5yjBoKVjCbSy3",
+  "userId": "1",
+  "weight": "30",
+  "length": "1233",
+  "date": "2023-04-06",
+  "location": "Grabow nad Prosna",
+  "species": "SUm",
+  "_class": "com.example.fishpch.model.Entry"
+}]
