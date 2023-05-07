@@ -8,12 +8,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProfileComponent {
   constructor(private http: HttpClient) {}
-  server_ip = 'https://jsonplaceholder.typicode.com/posts';
+  endPoint = 'http://localhost:8080/api/entry/user/1';
   showModal = false;
 
   ngOnInit(): void {
-    this.http.get(this.server_ip).subscribe((data: any) => {
-      console.log(data);
+    this.http.get(this.endPoint).subscribe((data: any) => {
+      this.fishes = data
     });
   }
   
@@ -45,21 +45,13 @@ export class ProfileComponent {
 
   fishes = [
     {
-      id: 0,
-      species: 'Catfish',
-      weight: 5,
-      length: 122,
-      date: '2020-01-01',
-      location: 'Poland/Wroclaw',
-    },
-    {
-      id: 1,
-      species: 'Bass',
-      weight: 2,
-      length: 60,
-      date: '2020-02-01',
-      location: 'USA/California',
-    },
+    id: 0,
+    species: '',
+    weight: 0,
+    length: 0,
+    date: '',
+    location: '',
+    }
   ];
 
   friends = [

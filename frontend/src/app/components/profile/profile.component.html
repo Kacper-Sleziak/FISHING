@@ -1,39 +1,44 @@
 <h1 class="text-center" style="color: white">Caught Fishes</h1>
 <carousel>
-  <slide *ngFor="let fish of fishes; let i = index">
-    <div class="d-flex justify-content-center">
-      <img
-        src="../../../../assets/img/karp.jpg"
-        alt="slide image"
-        class="w-50"
-      />
-    </div>
-    <div
-      class="carousel-caption d-none d-md-block"
-      style="background-color: rgba(255, 255, 255, 0.307); margin: 0 10% 0 10%"
-    >
-      <h1>{{ fish.species }}</h1>
-      <br />
-      <h2>{{ fish.weight }}kg</h2>
-      <h2>{{ fish.length }}cm</h2>
-      <br />
-      <h4>Date: {{ fish.date }}</h4>
-      <h4>Location: {{ fish.location }}</h4>
-      <button class="btn btn-danger" (click)="deleteItem(i)">
-        <i class="fa fa-trash"></i>
-        Delete
-      </button>
-      <button class="btn btn-primary" (click)="openModal(fish)">
-        <i class="fa fa-pencil"></i>
-        Update
-      </button>
-    </div>
-  </slide>
+  <ng-container *ngIf="fishes">
+    <slide *ngFor="let fish of fishes; let i = index">
+      <div class="d-flex justify-content-center">
+        <img
+          src="../../../../assets/img/karp.jpg"
+          alt="slide image"
+          class="w-50"
+        />
+      </div>
+      <div
+        class="carousel-caption d-none d-md-block"
+        style="
+          background-color: rgba(255, 255, 255, 0.307);
+          margin: 0 10% 0 10%;
+        "
+      >
+        <h1>{{ fish.species }}</h1>
+        <br />
+        <h2>{{ fish.weight }}kg</h2>
+        <h2>{{ fish.length }}cm</h2>
+        <br />
+        <h4>Date: {{ fish.date }}</h4>
+        <h4>Location: {{ fish.location }}</h4>
+        <button class="btn btn-danger" (click)="deleteItem(i)">
+          <i class="fa fa-trash"></i>
+          Delete
+        </button>
+        <button class="btn btn-primary" (click)="openModal(fish)">
+          <i class="fa fa-pencil"></i>
+          Update
+        </button>
+      </div>
+    </slide>
+  </ng-container>
 </carousel>
 
 <ng-container *ngIf="showModal">
   <div
-    style="color :white"
+    style="color: white"
     role="dialog"
     aria-labelledby="updateFishModalLabel"
   >
@@ -66,7 +71,7 @@
             <div class="form-group">
               <label for="weight">Weight:</label>
               <input
-                type="number"
+                type="text"
                 class="form-control"
                 id="weight"
                 name="weight"
@@ -77,7 +82,7 @@
             <div class="form-group">
               <label for="length">Length:</label>
               <input
-                type="number"
+                type="text"
                 class="form-control"
                 id="length"
                 name="length"
@@ -88,7 +93,7 @@
             <div class="form-group">
               <label for="date">Date:</label>
               <input
-                type="date"
+                type="text"
                 class="form-control"
                 id="date"
                 name="date"
@@ -110,7 +115,12 @@
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" (click)="closeModal()" data-dismiss="modal">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            (click)="closeModal()"
+            data-dismiss="modal"
+          >
             Cancel
           </button>
           <button type="button" class="btn btn-primary" (click)="updateFish()">
