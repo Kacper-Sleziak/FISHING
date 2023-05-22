@@ -19,12 +19,26 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.aspectj:aspectjweaver:1.9.7'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.3'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-api:2.0.3'
+    implementation 'org.springdoc:springdoc-openapi-starter-webflux-ui:2.0.3'
+
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'aspectj:aspectj-tools:1.0.6'
+    implementation 'aspectj:aspectj-ant:1.0.6'
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'com.mysql:mysql-connector-j'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    implementation 'io.swagger.core.v3:swagger-annotations:2.2.8'
+    implementation 'jakarta.validation:jakarta.validation-api:3.0.2'
+    implementation 'org.openapitools:jackson-databind-nullable:0.2.2'
+    implementation 'io.swagger:swagger-annotations:1.6.1'
+    implementation 'org.openapitools:jackson-databind-nullable:0.2.6'
 }
 
 tasks.named('test') {
