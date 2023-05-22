@@ -21,9 +21,7 @@ public class LongestFishAspect {
             return;
         }
 
-        if(longestFish.getLength() < entry.getLength()){
-            longestFish = entry;
-        }
+        if(longestFish.getLength() < entry.getLength()) longestFish = entry;
     }
     public static Entry getLongestFishId() {
         return longestFish;
