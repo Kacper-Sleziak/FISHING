@@ -1,4 +1,4 @@
-package com.example.fishpch.sevice;
+package com.example.fishpch.service;
 
 
 import com.example.fishpch.model.Entry;

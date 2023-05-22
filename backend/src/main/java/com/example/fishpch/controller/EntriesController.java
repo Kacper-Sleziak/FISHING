@@ -1,8 +1,9 @@
 package com.example.fishpch.controller;
 
 
+import com.example.fishpch.aspects.LongestFishAspect;
 import com.example.fishpch.model.Entry;
-import com.example.fishpch.sevice.GlobalService;
+import com.example.fishpch.service.GlobalService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -49,6 +50,10 @@ public class EntriesController {
 
         globalService.saveEntry(entry);
         return entry;
+    }
+    @GetMapping("/long")
+    public Entry getLongest() {
+        return LongestFishAspect.getLongestFishId();
     }
 
     @PutMapping("/edit")

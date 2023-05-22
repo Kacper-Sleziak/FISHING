@@ -12,7 +12,7 @@ public class Entry {
     private String id;
     private String userId;
     private String weight;
-    private String length;
+    private double length;
     private String date;
     private String location;
     private String species;
