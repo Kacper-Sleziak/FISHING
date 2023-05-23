@@ -11,3 +11,12 @@ services:
       - "27017:27017"
     volumes:
       - ./data:/data/db
+  graphdb:
+    image: ontotext/graphdb:9.9.0-ee
+    ports:
+      - 7200:7200
+    environment:
+      - JVM_OPTS=-Xmx4g
+      - GRAPHDB_HOME=/opt/graphdb/home
+    volumes:
+      - ./graphdb-data:/opt/graphdb/home
