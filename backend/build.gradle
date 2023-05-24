@@ -40,14 +40,12 @@ dependencies {
     implementation 'io.swagger:swagger-annotations:1.6.1'
     implementation 'org.openapitools:jackson-databind-nullable:0.2.6'
 
-    implementation 'org.eclipse.rdf4j:rdf4j-model:3.6.3'
-    implementation 'org.eclipse.rdf4j:rdf4j-repository:3.6.3'
-    implementation 'org.eclipse.rdf4j:rdf4j-queryresultio:3.6.3'
-//    implementation 'org.apache.jena:jena-core:latest.release'
-//    implementation 'org.eclipse.rdf4j:rdf4j-storage:4.3.1'
-//    implementation 'org.slf4j:slf4j-api'
+//    implementation 'org.eclipse.rdf4j:rdf4j-model:3.6.3'
+//    implementation 'org.eclipse.rdf4j:rdf4j-repository:3.6.3'
+//    implementation 'org.eclipse.rdf4j:rdf4j-queryresultio:3.6.3'
+    implementation 'org.eclipse.rdf4j:rdf4j-storage:4.3.1'
+    implementation 'org.slf4j:slf4j-api'
 }
-
 tasks.named('test') {
     useJUnitPlatform()
 }

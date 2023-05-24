@@ -1,6 +1,17 @@
 package com.example.fishpch.RDF4J;
 
 import org.eclipse.rdf4j.model.Value;
+import org.eclipse.rdf4j.query.BindingSet;
+import org.eclipse.rdf4j.query.QueryLanguage;
+import org.eclipse.rdf4j.query.TupleQuery;
+import org.eclipse.rdf4j.query.TupleQueryResult;
+import org.eclipse.rdf4j.repository.Repository;
+import org.eclipse.rdf4j.repository.RepositoryConnection;
+import org.eclipse.rdf4j.repository.RepositoryException;
+import org.eclipse.rdf4j.repository.http.HTTPRepository;
+import org.eclipse.rdf4j.repository.manager.RepositoryManager;
+import org.eclipse.rdf4j.repository.manager.RepositoryProvider;
+import org.eclipse.rdf4j.rio.RDFParseException;
 
 public class Rdf4j {
 
@@ -15,31 +26,31 @@ public class Rdf4j {
         // String rule = pre1+pre2+pre3+pre4+pre5+"CONSTRUCT {?s a cnt:Average} WHERE {SELECT ?s (count(?p) AS ?numBrothers) WHERE {  ?s cnt:hasBrother ?p} GROUP BY ?s HAVING (?numBrothers>=3 && ?numBrothers<=4)}";
         // String match = "";//pre1+pre2+pre3+pre4+pre5 + "CONSTRUCT {?s a cnt:Person}";
 
-        String rdf4jServer = "http://localhost:8080/rdf4j-server/";
+//        String rdf4jServer = "http://localhost:8080/rdf4j-server/";
+//        String repositoryID = "repo";
+
+        String rdf4jServer = "http://localhost:7200";
         String repositoryID = "repo";
 
         Repository rep1 = new HTTPRepository(rdf4jServer, repositoryID);
-        RepositoryManager repositoryManager = RepositoryProvider.getRepositoryManager("http://localhost:8080/rdf4j-server/");
+        RepositoryManager repositoryManager = RepositoryProvider.getRepositoryManager(rdf4jServer);
         Repository rep = repositoryManager.getRepository("repo");
 
-        RepositoryConnection conn = rep.getConnection();
-
-        String[] queries = {
-                pre6 + "SELECT ?person WHERE { ?person fishing:memberOf/fishing:name \"Wody Polskie\" . }",
-                pre6 + "SELECT ?person WHERE { ?person fishing:gender ?gender . FILTER (?gender = \"Female\")}",
-                pre6 + "SELECT ?fish (count(?fish) as ?count) WHERE { ?person fishing:favouriteFish/fishing:name ?fish ." +
-                        " } GROUP BY ?fish ORDER BY DESC(?count)",
-                pre6 + "SELECT ?person ?name ?lastName ?knows WHERE { ?person fishing:name ?name ." +
-                        " ?person fishing:lastName ?lastName . OPTIONAL { ?person fishing:knows/fishing:name ?knows } }",
-                pre6 + "SELECT (concat(?name, ?lastName) as ?fullName) ?org ?rodName ?account " +
-                        "WHERE { ?person fishing:name ?name . " +
-                        "?person fishing:lastName ?lastName . ?person fishing:memberOf/fishing:name ?org . " +
-                        "?person fishing:uses/fishing:name ?rodName ." +
-                        " OPTIONAL { ?person fishing:has/fishing:name ?account } . } ORDER BY (?rodName)"
-        };
-
-        try {
-            for (int i=0; i<5; i++) {
+        try (RepositoryConnection conn = rep.getConnection()) {
+            String[] queries = {
+                    pre6 + "SELECT ?person WHERE { ?person fishing:memberOf/fishing:name \"Wody Polskie\" . }",
+                    pre6 + "SELECT ?person WHERE { ?person fishing:gender ?gender . FILTER (?gender = \"Female\")}",
+                    pre6 + "SELECT ?fish (count(?fish) as ?count) WHERE { ?person fishing:favouriteFish/fishing:name ?fish ." +
+                            " } GROUP BY ?fish ORDER BY DESC(?count)",
+                    pre6 + "SELECT ?person ?name ?lastName ?knows WHERE { ?person fishing:name ?name ." +
+                            " ?person fishing:lastName ?lastName . OPTIONAL { ?person fishing:knows/fishing:name ?knows } }",
+                    pre6 + "SELECT (concat(?name, ?lastName) as ?fullName) ?org ?rodName ?account " +
+                            "WHERE { ?person fishing:name ?name . " +
+                            "?person fishing:lastName ?lastName . ?person fishing:memberOf/fishing:name ?org . " +
+                            "?person fishing:uses/fishing:name ?rodName ." +
+                            " OPTIONAL { ?person fishing:has/fishing:name ?account } . } ORDER BY (?rodName)"
+            };
+            for (int i = 0; i < 5; i++) {
                 System.out.println(queries[i]);
                 TupleQuery tupleQuery = conn.prepareTupleQuery(QueryLanguage.SPARQL, queries[i]);
                 try (TupleQueryResult result = tupleQuery.evaluate()) {
@@ -59,28 +70,23 @@ public class Rdf4j {
                             Value valueName = bindingSet.getValue("name");
                             Value valueLastName = bindingSet.getValue("lastName");
                             Value valueKnows = bindingSet.getValue("knows");
-                            res += valueName +" "+valueLastName+" "+valueKnows;
+                            res += valueName + " " + valueLastName + " " + valueKnows;
                         }
                         if (i == 4) {
                             Value valueFullName = bindingSet.getValue("fullName");
                             Value valueOrg = bindingSet.getValue("org");
                             Value valueRodName = bindingSet.getValue("rodName");
                             Value valueAccount = bindingSet.getValue("account");
-                            res += valueFullName +" "+valueOrg+" "+valueRodName+" "+valueAccount;
+                            res += valueFullName + " " + valueOrg + " " + valueRodName + " " + valueAccount;
                         }
-                        System.out.println(res+"\n\n");
+                        System.out.println("xd1" + res + "\n\n");
                     }
                 }
             }
 
-        } catch (RDFParseException e) {
+        } catch (RDFParseException | RepositoryException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        } catch (RepositoryException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } finally {
-            conn.close();
         }
     }
 }
