@@ -1,0 +1,151 @@
+@base <http://example.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fishing: <http://example.org/fishing/0.1/> .
+
+<http://example.org/fishing/0.1/> a owl:Ontology ;
+	dc:title "Fishing vocabulary" ;
+	dc:description "Fishing RDF vocabulary, described using W3C RDF Schema nad the Web Ontology Language." .
+	
+
+fishing:Entity a rdfs:Class .
+
+fishing:Person a rdfs:Class ;
+	rdfs:label "Person" ;
+	rdfs:comment "A person." ;
+	rdfs:subClassOf fishing:Entity .
+	
+fishing:Fisherman a rdfs:Class ;
+	rdfs:label "Fisherman" ;
+	rdfs:comment "A fisherman" ;
+	rdfs:subClassOf fishing:Person .
+	
+fishing:Organization a rdfs:Class ;
+	rdfs:label "Organization" ;
+	rdfs:comment "An organization." ;
+	rdfs:subClassOf fishing:Entity .
+	
+fishing:Group a rdfs:Class ;
+	rdfs:label "Group" ;
+	rdfs:comment "A class of entities" ;
+	rdfs:subClassOf fishing:Entity .
+
+fishing:Project a rdfs:Class ;
+	rdfs:label "Project" ;
+	rdfs:comment "A project (collective endeavour)" .
+	
+fishing:OnlineAccount a rdfs:Class ;
+	rdfs:label "Online account." ;
+	rdfs:comment "An online account" ;
+	rdfs:subClassOf fishing:Entity .
+	
+fishing:OnlineFishingAccount a rdfs:Class ;
+	rdfs:label "Online Fishing Account" ;
+	rdfs:comment "An online fishing account" ;
+	rdfs:subClassOf fishing:OnlineAccount .
+
+fishing:Fish a rdfs:Class ;
+    rdfs:label "Fish" ;
+    rdfs:comment "A fish." ;
+    rdfs:subClassOf fishing:Entity .
+
+fishing:FishingSpot a rdfs:Class ;
+    rdfs:label "Fishing Spot" ;
+    rdfs:comment "A location where fishing takes place." ;
+    rdfs:subClassOf fishing:Entity .
+
+fishing:FishingEquipment a rdfs:Class ;
+    rdfs:label "Fishing Equipment" ;
+    rdfs:comment "Tools and gear used for fishing." ;
+    rdfs:subClassOf fishing:Entity .
+
+fishing:FishingRod a rdfs:Class ;
+    rdfs:label "Fishing Rod" ;
+    rdfs:comment "A long, flexible rod used for fishing." ;
+    rdfs:subClassOf fishing:FishingEquipment .
+
+fishing:Fishery a rdfs:Class ;
+    rdfs:label "Fishery" ;
+    rdfs:comment "A place where fish are bred, reared, and harvested." ;
+    rdfs:subClassOf fishing:Entity .
+	
+fishing:gender a rdf:Property ;
+	rdfs:label "Gender" ;
+	rdfs:comment "Gender of this person" ;
+	rdfs:domain fishing:Person ;
+	rdfs:range rdfs:Literal .
+	
+fishing:name a rdf:Property ;
+    rdfs:label "Name" ;
+    rdfs:comment "Name of a person or entity" ;
+    rdfs:domain fishing:Entity ;
+    rdfs:range rdfs:Literal .
+
+fishing:lastName a rdf:Property ;
+    rdfs:label "Last Name" ;
+    rdfs:comment "Last name of a person" ;
+    rdfs:domain fishing:Person ;
+    rdfs:range rdfs:Literal .
+
+fishing:age a rdf:Property ;
+    rdfs:label "Age" ;
+    rdfs:comment "Age of a person" ;
+    rdfs:domain fishing:Person ;
+    rdfs:range xsd:integer .
+	
+fishing:email a rdf:Property ;
+    rdfs:label "Email" ;
+    rdfs:comment "Email of an account" ;
+    rdfs:domain fishing:OnlineAccount ;
+    rdfs:range rdfs:Literal .
+
+fishing:color a rdf:Property ;
+    rdfs:label "Color" ;
+    rdfs:comment "Color attribute of an entity" ;
+    rdfs:domain fishing:Entity ;
+    rdfs:range rdfs:Literal .
+
+fishing:size a rdf:Property ;
+    rdfs:label "Size" ;
+    rdfs:comment "Size attribute of an entity" ;
+    rdfs:domain fishing:Entity ;
+    rdfs:range rdfs:Literal .
+
+fishing:privacy a rdf:Property ;
+    rdfs:label "Privacy" ;
+    rdfs:comment "Privacy attribute of an entity" ;
+    rdfs:domain fishing:Entity ;
+    rdfs:range rdfs:Literal .
+	
+fishing:memberOf a rdf:Property ;
+    rdfs:label "memberOf" ;
+    rdfs:comment "Indicates the membership of a person in an organization" ;
+    rdfs:domain fishing:Person ;
+    rdfs:range fishing:Organization .
+
+fishing:uses a rdf:Property ;
+    rdfs:label "uses" ;
+    rdfs:comment "Indicates the equipment used by a fisherman" ;
+    rdfs:domain fishing:Fisherman ;
+    rdfs:range fishing:FishingEquipment .
+
+fishing:knows a rdf:Property ;
+    rdfs:label "knows" ;
+    rdfs:comment "Indicates the familiarity of two people" ;
+    rdfs:domain fishing:Person ;
+    rdfs:range rdfs:Person .
+
+fishing:favouriteFish a rdf:Property ;
+    rdfs:label "favouriteFish" ;
+    rdfs:comment "Indicates the favorite fish of a person" ;
+    rdfs:domain fishing:Person ;
+    rdfs:range fishing:FishSpecies .
+	
+fishing:has a rdf:Property ;
+	rdfs:label "has" ;
+	rdfs:comment "Indicates the has relationship between entities" ;
+	rdfs:domain fishing:Entity ;
+	rdfs:range fishing:Entity .

@@ -1,18 +1,19 @@
 version: "3.9"
 
 services:
-  # mongodb:
-  #   image: mongo:latest
-  #   container_name: mongodb
-  #   environment:
-  #     - MONGO_INITDB_ROOT_USERNAME=admin
-  #     - MONGO_INITDB_ROOT_PASSWORD=root
-  #   ports:
-  #     - "27017:27017"
-  #   volumes:
-  #     - ./data:/data/db
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=root
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data/db
   graphdb:
     image: khaller/graphdb-free:10.0.0
+    container_name: graphdb
     ports:
       - 7200:7200
     environment:
@@ -20,3 +21,4 @@ services:
       - GRAPHDB_HOME=/opt/graphdb/home
     volumes:
       - ./graphdb-data:/opt/graphdb/home
+

@@ -21,7 +21,7 @@ public class Rdf4j {
                 pre3 = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n",
                 pre4 = "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n",
                 pre5 = "PREFIX cnt: <http://www.semanticweb.org/tkubik/ontologies/2016/2/untitled-ontology-16#>\n",
-                pre6 = "PREFIX fishing: <http://example.org/fishpch/0.1#>\n";
+                pre6 = "PREFIX fishing: <http://example.org/fishing/0.1#>\n";
 
         // String rule = pre1+pre2+pre3+pre4+pre5+"CONSTRUCT {?s a cnt:Average} WHERE {SELECT ?s (count(?p) AS ?numBrothers) WHERE {  ?s cnt:hasBrother ?p} GROUP BY ?s HAVING (?numBrothers>=3 && ?numBrothers<=4)}";
         // String match = "";//pre1+pre2+pre3+pre4+pre5 + "CONSTRUCT {?s a cnt:Person}";
@@ -35,7 +35,6 @@ public class Rdf4j {
         Repository rep1 = new HTTPRepository(rdf4jServer, repositoryID);
         RepositoryManager repositoryManager = RepositoryProvider.getRepositoryManager(rdf4jServer);
         Repository rep = repositoryManager.getRepository("repo");
-
         try (RepositoryConnection conn = rep.getConnection()) {
             String[] queries = {
                     pre6 + "SELECT ?person WHERE { ?person fishing:memberOf/fishing:name \"Wody Polskie\" . }",
@@ -54,6 +53,7 @@ public class Rdf4j {
                 System.out.println(queries[i]);
                 TupleQuery tupleQuery = conn.prepareTupleQuery(QueryLanguage.SPARQL, queries[i]);
                 try (TupleQueryResult result = tupleQuery.evaluate()) {
+                    System.out.println(result);
                     while (result.hasNext()) { // iterate over the result
                         BindingSet bindingSet = result.next();
                         String res = "";
@@ -61,6 +61,7 @@ public class Rdf4j {
                             Value valuePerson = bindingSet.getValue("person");
                             res += valuePerson + " ";
                         }
+
                         if (i == 2) {
                             Value valueFish = bindingSet.getValue("fish");
                             Value valueCount = bindingSet.getValue("count");
@@ -78,8 +79,8 @@ public class Rdf4j {
                             Value valueRodName = bindingSet.getValue("rodName");
                             Value valueAccount = bindingSet.getValue("account");
                             res += valueFullName + " " + valueOrg + " " + valueRodName + " " + valueAccount;
+                            System.out.println(res + "\n\n");
                         }
-                        System.out.println("xd1" + res + "\n\n");
                     }
                 }
             }
