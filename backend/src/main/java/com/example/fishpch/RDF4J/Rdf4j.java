@@ -37,56 +37,81 @@ public class Rdf4j {
         Repository rep = repositoryManager.getRepository("repo");
         try (RepositoryConnection conn = rep.getConnection()) {
             String[] queries = {
-                    pre6 + "SELECT ?person WHERE { ?person fishing:memberOf/fishing:name \"Wody Polskie\" . }",
-                    pre6 + "SELECT ?person WHERE { ?person fishing:gender ?gender . FILTER (?gender = \"Female\")}",
-                    pre6 + "SELECT ?fish (count(?fish) as ?count) WHERE { ?person fishing:favouriteFish/fishing:name ?fish ." +
-                            " } GROUP BY ?fish ORDER BY DESC(?count)",
-                    pre6 + "SELECT ?person ?name ?lastName ?knows WHERE { ?person fishing:name ?name ." +
-                            " ?person fishing:lastName ?lastName . OPTIONAL { ?person fishing:knows/fishing:name ?knows } }",
-                    pre6 + "SELECT (concat(?name, ?lastName) as ?fullName) ?org ?rodName ?account " +
-                            "WHERE { ?person fishing:name ?name . " +
-                            "?person fishing:lastName ?lastName . ?person fishing:memberOf/fishing:name ?org . " +
-                            "?person fishing:uses/fishing:name ?rodName ." +
-                            " OPTIONAL { ?person fishing:has/fishing:name ?account } . } ORDER BY (?rodName)"
+                    pre6 + "SELECT ?fish WHERE { ?fish a fishing:Fish } ",
+                    pre6 + "SELECT (COUNT(DISTINCT ?gender) AS ?genderCount) WHERE { ?gender rdf:type fishing:Gender .}",
+                    pre6 + "SELECT ?user\n" +
+                            "WHERE {\n" +
+                            "  ?user a fishing:User ;\n" +
+                            "        fishing:wasOn fishing:FishingSpot2 ;\n" +
+                            "        fishing:gender fishing:MaleGender .\n" +
+                            "}",
+                    pre6 + "SELECT ?orgName (COUNT(?org) AS ?orgCount) (GROUP_CONCAT(?userName; separator=\", \") AS ?userNames)\n" +
+                            "WHERE {\n" +
+                            "  ?org a fishing:Organization ;\n" +
+                            "       rdfs:label ?orgName .\n" +
+                            "  OPTIONAL {\n" +
+                            "    ?user fishing:memberOf ?org ;\n" +
+                            "          fishing:name ?userName .\n" +
+                            "  }\n" +
+                            "}\n" +
+                            "GROUP BY ?orgName\n",
+                    pre6 + "SELECT ?friend (COUNT(?femaleFriend) AS ?femaleCount) (COUNT(?maleFriend) AS ?maleCount)\n" +
+                            "WHERE {\n" +
+                            "  fishing:John fishing:hasFriend ?friend .\n" +
+                            "  \n" +
+                            "  OPTIONAL {\n" +
+                            "    ?friend fishing:gender fishing:FemaleGender .\n" +
+                            "    BIND(?friend AS ?femaleFriend)\n" +
+                            "  }\n" +
+                            "  \n" +
+                            "  OPTIONAL {\n" +
+                            "    ?friend fishing:gender fishing:MaleGender .\n" +
+                            "    BIND(?friend AS ?maleFriend)\n" +
+                            "  }\n" +
+                            "}\n" +
+                            "GROUP BY ?friend"
             };
+
             for (int i = 0; i < 5; i++) {
+                System.out.println('*');
                 System.out.println(queries[i]);
                 TupleQuery tupleQuery = conn.prepareTupleQuery(QueryLanguage.SPARQL, queries[i]);
                 try (TupleQueryResult result = tupleQuery.evaluate()) {
-                    System.out.println(result);
                     while (result.hasNext()) { // iterate over the result
                         BindingSet bindingSet = result.next();
                         String res = "";
-                        if (i == 0 || i == 1 || i == 3) {
-                            Value valuePerson = bindingSet.getValue("person");
-                            res += valuePerson + " ";
+                        if (i == 0) {
+                            Value valueFish = bindingSet.getValue("fish");
+                            res += valueFish + " ";
+                        }
+
+                        if (i == 1) {
+                            Value countGender = bindingSet.getValue("genderCount");
+                            res += countGender + " ";
                         }
 
                         if (i == 2) {
-                            Value valueFish = bindingSet.getValue("fish");
-                            Value valueCount = bindingSet.getValue("count");
-                            res += valueFish + " " + valueCount;
+                            Value valueUser= bindingSet.getValue("user");
+                            res += valueUser;
                         }
                         if (i == 3) {
-                            Value valueName = bindingSet.getValue("name");
-                            Value valueLastName = bindingSet.getValue("lastName");
-                            Value valueKnows = bindingSet.getValue("knows");
-                            res += valueName + " " + valueLastName + " " + valueKnows;
+                            Value valueFullName = bindingSet.getValue("orgCount");
+                            Value userNamesValue = bindingSet.getValue("userNames");
+                            res += valueFullName + " " + userNamesValue;
                         }
                         if (i == 4) {
-                            Value valueFullName = bindingSet.getValue("fullName");
-                            Value valueOrg = bindingSet.getValue("org");
-                            Value valueRodName = bindingSet.getValue("rodName");
-                            Value valueAccount = bindingSet.getValue("account");
-                            res += valueFullName + " " + valueOrg + " " + valueRodName + " " + valueAccount;
-                            System.out.println(res + "\n\n");
+                            Value valueFriend = bindingSet.getValue("friend");
+                            Value valueFemaleCount = bindingSet.getValue("femaleCount");
+                            Value valueMaleCount = bindingSet.getValue("maleCount");
+
+                            res += valueFriend + " " + valueFemaleCount + " " + valueMaleCount;
                         }
+                        System.out.println(res+"\n\n");
                     }
                 }
             }
 
         } catch (RDFParseException | RepositoryException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }

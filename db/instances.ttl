@@ -2,314 +2,185 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix fishing: <http://example.org/fishing/0.1#> .
 
-fishing:Salmon
-    a fishing:Fish ;
+fishing:John a fishing:User ;
+    fishing:name "John" ;
+    fishing:age 35 ;
+    fishing:gender fishing:MaleGender .
+
+fishing:Admin1 a fishing:Admin ;
+    fishing:name "Admin1" ;
+    fishing:age 40 ;
+    fishing:gender fishing:FemaleGender .
+
+fishing:Moderator1 a fishing:Moderator ;
+    fishing:name "Moderator1" ;
+    fishing:age 28 ;
+    fishing:gender fishing:MaleGender .
+
+fishing:Fisherman1 a fishing:Fisherman ;
+    fishing:name "Fisherman1" ;
+    fishing:age 42 ;
+    fishing:gender fishing:MaleGender .
+
+fishing:Fisherman2 a fishing:Fisherman ;
+    fishing:name "Fisherman2" ;
+    fishing:age 38 ;
+    fishing:gender fishing:FemaleGender .
+
+fishing:User1 a fishing:User ;
+    fishing:name "User1" ;
+    fishing:age 25 ;
+    fishing:gender fishing:MaleGender .
+
+fishing:User1 a fishing:User ;
+    fishing:name "User1" ;
+    fishing:lastName "Doe" ;
+    fishing:age 25 ;
+    fishing:gender fishing:MaleGender ;
+    fishing:email "user1@example.com" ;
+    fishing:privacy "Public" .
+
+fishing:Fisherman1 a fishing:Fisherman ;
+    fishing:name "Fisherman1" ;
+    fishing:lastName "Smith" ;
+    fishing:age 42 ;
+    fishing:gender fishing:MaleGender ;
+    fishing:email "fisherman1@example.com" ;
+    fishing:privacy "Private" ;
+    fishing:memberOf fishing:FishingClub .
+
+fishing:Moderator1 a fishing:Moderator ;
+    fishing:name "Moderator1" ;
+    fishing:lastName "Johnson" ;
+    fishing:age 32 ;
+    fishing:gender fishing:MaleGender ;
+    fishing:email "moderator1@example.com" ;
+    fishing:privacy "Public" ;
+    fishing:memberOf fishing:FishingAssociation .
+
+fishing:Admin1 a fishing:Admin ;
+    fishing:name "Admin1" ;
+    fishing:lastName "Williams" ;
+    fishing:age 40 ;
+    fishing:gender fishing:FemaleGender ;
+    fishing:email "admin1@example.com" ;
+    fishing:privacy "Public" ;
+    fishing:memberOf fishing:FishingCouncil .
+
+fishing:Admin4 a fishing:Admin ;
+    fishing:name "Admin4" ;
+    fishing:age 50 ;
+    fishing:gender fishing:MaleGender .
+
+fishing:Admin5 a fishing:Admin ;
+    fishing:name "Admin5" ;
+    fishing:age 48 ;
+    fishing:gender fishing:FemaleGender .
+
+fishing:Moderator4 a fishing:Moderator ;
+    fishing:name "Moderator4" ;
+    fishing:age 35 ;
+    fishing:gender fishing:MaleGender .
+
+fishing:Moderator5 a fishing:Moderator ;
+    fishing:name "Moderator5" ;
+    fishing:age 33 ;
+    fishing:gender fishing:FemaleGender .
+
+fishing:Fisherman4 a fishing:Fisherman ;
+    fishing:name "Fisherman4" ;
+    fishing:age 41 ;
+    fishing:gender fishing:MaleGender .
+
+fishing:Salmon a fishing:Fish ;
     fishing:name "Salmon" ;
     fishing:size "Medium" ;
     fishing:color "Pink" .
 
-fishing:Trout
-    a fishing:Fish ;
+fishing:Trout a fishing:Fish ;
     fishing:name "Trout" ;
     fishing:size "Medium" ;
     fishing:color "Brown" .
 
-fishing:Bass
-    a fishing:Fish ;
-    fishing:name "Bass" ;
-    fishing:size "Large" ;
-    fishing:color "Green" .
-
-fishing:Carp
-    a fishing:Fish ;
-    fishing:name "Carp" ;
-    fishing:size "Big" ;
-    fishing:color "Grey" .
-
-fishing:Catfish
-    a fishing:Fish ;
-    fishing:name "Catfish" ;
-    fishing:size "Huge" ;
-    fishing:color "Dark Brown" .
-	
-fishing:Tuna
-    a fishing:Fish ;
+fishing:Tuna a fishing:Fish ;
     fishing:name "Tuna" ;
     fishing:size "Large" ;
     fishing:color "Silver" .
 
-fishing:Perch
-    a fishing:Fish ;
-    fishing:name "Perch" ;
-    fishing:size "Small" ;
-    fishing:color "Yellow" .
+fishing:Bass a fishing:Fish ;
+    fishing:name "Bass" ;
+    fishing:size "Medium" ;
+    fishing:color "Green" .
 
-fishing:Snapper
-    a fishing:Fish ;
+fishing:Trout a fishing:Fish ;
+    fishing:name "Trout" ;
+    fishing:size "Medium" ;
+    fishing:color "Brown" .
+
+fishing:Mackerel a fishing:Fish ;
+    fishing:name "Mackerel" ;
+    fishing:size "Small" ;
+    fishing:color "Blue" .
+
+fishing:Snapper a fishing:Fish ;
     fishing:name "Snapper" ;
     fishing:size "Medium" ;
     fishing:color "Red" .
-	
-fishing:FiberglassRod
-	a fishing:FishingRod ;
-	fishing:name "Fiberglass 2000" ;
-	fishing:color "Cyan" ;
-	fishing:size "Regular" .
 
-fishing:ClassicPlasticRod
-	a fishing:FishingRod ;
-	fishing:name "Classic Plastic Rod" ;
-	fishing:color "Olive" ;
-	fishing:size "Small" .
-	
-#10
-	
-fishing:CarbonFiber
-	a fishing:FishingRod ;
-	fishing:name "Carbon Fiber Deluxe" ;
-	fishing:color "Black" ;
-	fishing:size "Big" .
-	
-fishing:ImpacterLux
-	a fishing:FishingRod ;
-	fishing:name "Impacter 3000 Lux" ;
-	fishing:color "Carmine" ;
-	fishing:size "Enormous" .
+fishing:MaleGender a fishing:Gender ;
+    rdfs:label "Male" ;
+    rdfs:comment "The gender of a male person" .
 
-fishing:PZW
-	a fishing:Organization ;
-	fishing:name "Polski Zwiazek Wedkarski" ;
-	fishing:size "Big" ;
-	fishing:privacy "Public" .
-	
-	
-fishing:WodyPolskie
-	a fishing:Organization ;
-	fishing:name "Wody Polskie" ;
-	fishing:size "Medium" ;
-	fishing:privacy "Private" .
+fishing:FemaleGender a fishing:Gender ;
+    rdfs:label "Female" ;
+    rdfs:comment "The gender of a female person" .
 
-fishing:AdamKowalski
-	a fishing:Fisherman ;
-	fishing:name "Adam" ;
-	fishing:lastName "Kowalski" ;
-	fishing:gender "Male" ;
-	fishing:uses [
-		a fishing:FishingRod ;
-		fishing:name "Fiberglass 2000"
-	] ;
-	fishing:favouriteFish [
-		a fishing:Fish ;
-		fishing:name "Carp" 
-	] ;
-	fishing:memberOf [
-		a fishing:Organization ;
-		fishing:name "PZW" 
-	] ;
-	fishing:has [
-		a fishing:OnlineFishingAccount ;
-		fishing:name "Kowal333"
-	] .
-	
-fishing:JohnSmith
-    a fishing:Fisherman ;
-    fishing:name "John" ;
-    fishing:lastName "Smith" ;
-    fishing:gender "Male" ;
-    fishing:uses [
-        a fishing:FishingRod ;
-        fishing:name "Carbon Fiber Deluxe"
-    ] ;
-    fishing:favouriteFish [
-        a fishing:Fish ;
-        fishing:name "Trout"
-    ] ;
-    fishing:memberOf [
-        a fishing:Organization ;
-        fishing:name "Wody Polskie"
-    ] ;
-    fishing:knows [
-		a fishing:Fisherman ;
-		fishing:name "Adam Kowalski" 
-	] .
+fishing:NonBinaryGender a fishing:Gender ;
+    rdfs:label "Non-Binary" ;
+    rdfs:comment "The gender of a non-binary person" .
 
-fishing:EmilyJohnson
-    a fishing:Fisherman ;
-    fishing:name "Emily" ;
-    fishing:lastName "Johnson" ;
-    fishing:gender "Female" ;
-    fishing:uses [
-        a fishing:FishingRod ;
-        fishing:name "Classic Plastic Rod"
-    ] ;
-    fishing:favouriteFish [
-        a fishing:Fish ;
-        fishing:name "Bass"
-    ] ;
-    fishing:memberOf [
-        a fishing:Organization ;
-        fishing:name "Wody Polskie"
-    ] .
+fishing:FishingSpot1 a fishing:FishingSpot ;
+    fishing:name "Lake A" ;
+    fishing:location "Coordinates of Lake A" .
 
-fishing:DavidWilson
-    a fishing:Fisherman ;
-    fishing:name "David" ;
-    fishing:lastName "Wilson" ;
-    fishing:gender "Male" ;
-    fishing:uses [
-        a fishing:FishingRod ;
-        fishing:name "Impacter 3000 Lux"
-    ] ;
-    fishing:favouriteFish [
-        a fishing:Fish ;
-        fishing:name "Salmon"
-    ] ;
-    fishing:memberOf [
-        a fishing:Organization ;
-        fishing:name "Polski Zwiazek Wedkarski"
-    ] ;
-    fishing:knows [
-		a fishing:Person ;
-		fishing:name "Adam Kowalski"
-	] ;
-	fishing:has [
-		a fishing:OnlineFishingAccount ;
-		fishing:name "DaveW"
-	] .
+fishing:FishingSpot2 a fishing:FishingSpot ;
+    fishing:name "River B" ;
+    fishing:location "Coordinates of River B" .
 
-fishing:SarahJohnson
-    a fishing:Fisherman ;
-    fishing:name "Sarah" ;
-    fishing:lastName "Johnson" ;
-    fishing:gender "Female" ;
-    fishing:uses [
-        a fishing:FishingRod ;
-        fishing:name "Fiberglass 2000"
-    ] ;
-    fishing:favouriteFish [
-        a fishing:Fish ;
-        fishing:name "Trout"
-    ] ;
-    fishing:memberOf [
-        a fishing:Organization ;
-        fishing:name "PZW"
-    ] ;
-    fishing:knows [
-        a fishing:Person ;
-        fishing:name "Emily Thompson"
-    ] .
+fishing:FishingSpot3 a fishing:FishingSpot ;
+    fishing:name "Pond C" ;
+    fishing:location "Coordinates of Pond C" .
 
-fishing:MichaelDavis
-    a fishing:Fisherman ;
-    fishing:name "Michael" ;
-    fishing:lastName "Davis" ;
-    fishing:gender "Male" ;
-    fishing:uses [
-        a fishing:FishingRod ;
-        fishing:name "Fiberglass 2000"
-    ] ;
-    fishing:favouriteFish [
-        a fishing:Fish ;
-        fishing:name "Bass"
-    ] ;
-    fishing:memberOf [
-        a fishing:Organization ;
-        fishing:name "Wody Polskie"
-    ] ;
-    fishing:knows [
-        a fishing:Person ;
-        fishing:name "John Smith"
-    ] . 
-	
-#20
-	
-fishing:MarkJohnson
-    a fishing:Fisherman ;
-    fishing:name "Mark" ;
-    fishing:lastName "Johnson" ;
-    fishing:gender "Male" ;
-    fishing:uses [
-        a fishing:FishingRod ;
-        fishing:name "Classic Plastic Rod"
-    ] ;
-    fishing:favouriteFish [
-        a fishing:Fish ;
-        fishing:name "Catfish"
-    ] ;
-    fishing:memberOf [
-        a fishing:Organization ;
-        fishing:name "Polski Zwiazek Wedkarski"
-    ] ;
-    fishing:knows [
-        a fishing:Person ;
-        fishing:name "David Wilson"
-    ] ;
-	fishing:has [
-		a fishing:OnlineFishingAccount ;
-		fishing:name "MarkoPolo" 
-	] .
-	
-fishing:DaveW
-	a fishing:OnlineFishingAccount ;
-	fishing:name "DaveW" ;
-	fishing:email "dave.w@fisher.com" .
+fishing:User1 fishing:wasOn fishing:FishingSpot1, fishing:FishingSpot2 .
+fishing:Fisherman1 fishing:wasOn fishing:FishingSpot1, fishing:FishingSpot3 .
+fishing:Fisherman2 fishing:wasOn fishing:FishingSpot2 .
 
-fishing:Kowal333
-	a fishing:OnlineFishingAccount ;
-	fishing:name "Kowal333" ;
-	fishing:email "best.fisherman.ever@fishers.best.org" .
-	
-fishing:MarkoPolo
-	a fishing:OnlineFishingAccount ;
-	fishing:name "MarkoPolo" ;
-	fishing:email "m.p@pp.com" .
-	
-fishing:Stepnica
-	a fishing:FishingSpot ;
-	fishing:name "Stepnica" ;
-	fishing:has [
-		a fishing:Fish ;
-		fishing:name "Perch"
-	] .
+fishing:FishingClub a fishing:Organization ;
+    rdfs:label "Fishing Club" ;
+    rdfs:comment "A club for fishing enthusiasts" .
 
-fishing:Dabie
-	a fishing:FishingSpot ;
-	fishing:name "Jezioro Dabie" ;
-	fishing:has [
-		a fishing:Fish ;
-		fishing:name "Bass"
-	] .
-	
-fishing:Odra
-	a fishing:FishingSpot ;
-	fishing:name "Rzeka Odra" ;
-	fishing:has [
-		a fishing:Fish ;
-		fishing:name "Salmon"
-	] .
+fishing:FishingAssociation a fishing:Organization ;
+    rdfs:label "Fishing Association" ;
+    rdfs:comment "An association for promoting fishing activities" .
 
-fishing:Widawa
-	a fishing:FishingSpot ;
-	fishing:name "Rzeka Widawa" ;
-	fishing:has [
-		a fishing:Fish ;
-		fishing:name "Catfish"
-	] .
-	
-fishing:Krobielowice
-	a fishing:Fishery ;
-	fishing:name "Bar Sum Stawy rybne Krobielowice" ;
-	fishing:has [
-		a fishing:Fish ;
-		fishing:name "Perch"
-	] .
-	
-fishing:Bursztynowy
-	a fishing:Fishery ;
-	fishing:name "Bursztynowy Staw" ;
-	fishing:has [
-		a fishing:Fish ;
-		fishing:name "Trout"
-	] .
-	
-#30
+fishing:FishingCouncil a fishing:Organization ;
+    rdfs:label "Fishing Council" ;
+    rdfs:comment "A council governing fishing regulations" .
+
+fishing:User1 fishing:memberOf fishing:FishingClub .
+
+fishing:Moderator1 fishing:memberOf fishing:FishingAssociation .
+
+fishing:Admin1 fishing:memberOf fishing:FishingCouncil .
+
+fishing:John fishing:hasFriend fishing:Admin1 .
+
+fishing:John fishing:hasFriend fishing:Moderator1 .
+
+fishing:John fishing:hasFriend fishing:Fisherman1 .
+
+fishing:John fishing:hasFriend fishing:Fisherman2 .
+
+fishing:John fishing:hasFriend fishing:User1 .
+
+fishing:John fishing:hasFriend fishing:User2 .
