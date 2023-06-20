@@ -1,0 +1,661 @@
+<app-root _nghost-pfr-c8="" ng-version="15.2.8"
+  ><app-navbar _ngcontent-pfr-c8="" _nghost-pfr-c7=""
+    ><nav
+      _ngcontent-pfr-c7=""
+      class="navbar navbar-expand-lg navbar-light bg-light"
+    >
+      <a _ngcontent-pfr-c7="" href="#" class="navbar-brand">Fishing.com</a
+      ><button
+        _ngcontent-pfr-c7=""
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        class="navbar-toggler"
+      >
+        <span _ngcontent-pfr-c7="" class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        _ngcontent-pfr-c7=""
+        id="navbarNav"
+        class="collapse navbar-collapse justify-content-end"
+      >
+        <ul _ngcontent-pfr-c7="" class="navbar-nav">
+          <li _ngcontent-pfr-c7="" class="nav-item">
+            <a
+              _ngcontent-pfr-c7=""
+              routerlink=""
+              class="nav-link"
+              ng-reflect-router-link=""
+              href="/"
+              >Home</a
+            >
+          </li>
+          <li _ngcontent-pfr-c7="" class="nav-item">
+            <a _ngcontent-pfr-c7="" href="#" class="nav-link">About</a>
+          </li>
+          <li _ngcontent-pfr-c7="" class="nav-item">
+            <a
+              _ngcontent-pfr-c7=""
+              routerlink="/profile"
+              class="nav-link"
+              ng-reflect-router-link="/profile"
+              href="/profile"
+              >Profile</a
+            >
+          </li>
+          <li _ngcontent-pfr-c7="" class="nav-item">
+            <a
+              _ngcontent-pfr-c7=""
+              routerlink="/entry"
+              class="nav-link"
+              ng-reflect-router-link="/entry"
+              href="/entry"
+              >New entry</a
+            >
+          </li>
+          <li _ngcontent-pfr-c7="" class="nav-item">
+            <a
+              _ngcontent-pfr-c7=""
+              routerlink="/login"
+              class="nav-link"
+              ng-reflect-router-link="/login"
+              href="/login"
+              >Login</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav></app-navbar
+  >
+  <div
+    _ngcontent-pfr-c8=""
+    class="container-fluid bg-dark"
+    style="height: 100px"
+  ></div>
+  <div
+    _ngcontent-pfr-c8=""
+    class="container-fluid"
+    style="background-color: rgb(57, 67, 67)"
+  >
+    <router-outlet _ngcontent-pfr-c8=""></router-outlet
+    ><app-profile _nghost-pfr-c4=""
+      ><body _ngcontent-pfr-c4="">
+        <h1 _ngcontent-pfr-c4="" class="text-center" style="color: white">
+          Caught Fishes
+        </h1>
+        <carousel _ngcontent-pfr-c4=""
+          ><div tabindex="0" class="carousel slide" id="carousel1">
+            <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                aria-current="true"
+                class=""
+                data-bs-target="#carousel1"
+                data-bs-slide-to="0"
+              ></button
+              ><button
+                type="button"
+                aria-current="true"
+                data-bs-target="#carousel1"
+                data-bs-slide-to="1"
+                class="active"
+              ></button
+              ><button
+                type="button"
+                aria-current="true"
+                data-bs-target="#carousel1"
+                data-bs-slide-to="2"
+              ></button
+              ><button
+                type="button"
+                aria-current="true"
+                data-bs-target="#carousel1"
+                data-bs-slide-to="3"
+              ></button
+              ><!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}-->
+            </div>
+            <!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}-->
+            <div
+              class="carousel-inner"
+              ng-reflect-ng-style="[object Object]"
+              style="display: block"
+            >
+              <slide
+                _ngcontent-pfr-c4=""
+                _nghost-pfr-c3=""
+                aria-hidden="true"
+                style="width: 100%; order: 0"
+                class="item carousel-item"
+                ><div _ngcontent-pfr-c3="" class="item">
+                  <div
+                    _ngcontent-pfr-c4=""
+                    class="d-flex justify-content-center"
+                  >
+                    <img
+                      _ngcontent-pfr-c4=""
+                      src="../../../../assets/img/karp.jpg"
+                      alt="slide image"
+                      class="w-50"
+                    />
+                  </div>
+                  <div
+                    _ngcontent-pfr-c4=""
+                    class="carousel-caption d-none d-md-block"
+                    style="
+                      background-color: rgba(255, 255, 255, 0.307);
+                      margin: 0 10% 0 10%;
+                    "
+                  >
+                    <h1 _ngcontent-pfr-c4=""></h1>
+                    <br _ngcontent-pfr-c4="" />
+                    <h2 _ngcontent-pfr-c4="">1kgkg</h2>
+                    <h2 _ngcontent-pfr-c4="">30cm</h2>
+                    <br _ngcontent-pfr-c4="" />
+                    <h4 _ngcontent-pfr-c4="">Date:</h4>
+                    <h4 _ngcontent-pfr-c4="">Location:</h4>
+                    <button _ngcontent-pfr-c4="" class="btn btn-danger">
+                      <i _ngcontent-pfr-c4="" class="fa fa-trash"></i>
+                      Delete</button
+                    ><button _ngcontent-pfr-c4="" class="btn btn-primary">
+                      <i _ngcontent-pfr-c4="" class="fa fa-pencil"></i> Update
+                    </button>
+                  </div>
+                </div></slide
+              ><slide
+                _ngcontent-pfr-c4=""
+                _nghost-pfr-c3=""
+                aria-hidden="false"
+                style="width: 100%; order: 0"
+                class="item carousel-item active"
+                ><div _ngcontent-pfr-c3="" class="item active">
+                  <div
+                    _ngcontent-pfr-c4=""
+                    class="d-flex justify-content-center"
+                  >
+                    <img
+                      _ngcontent-pfr-c4=""
+                      src="../../../../assets/img/karp.jpg"
+                      alt="slide image"
+                      class="w-50"
+                    />
+                  </div>
+                  <div
+                    _ngcontent-pfr-c4=""
+                    class="carousel-caption d-none d-md-block"
+                    style="
+                      background-color: rgba(255, 255, 255, 0.307);
+                      margin: 0 10% 0 10%;
+                    "
+                  >
+                    <h1 _ngcontent-pfr-c4=""></h1>
+                    <br _ngcontent-pfr-c4="" />
+                    <h2 _ngcontent-pfr-c4="">1kgkg</h2>
+                    <h2 _ngcontent-pfr-c4="">30cm</h2>
+                    <br _ngcontent-pfr-c4="" />
+                    <h4 _ngcontent-pfr-c4="">Date:</h4>
+                    <h4 _ngcontent-pfr-c4="">Location:</h4>
+                    <button _ngcontent-pfr-c4="" class="btn btn-danger">
+                      <i _ngcontent-pfr-c4="" class="fa fa-trash"></i>
+                      Delete</button
+                    ><button _ngcontent-pfr-c4="" class="btn btn-primary">
+                      <i _ngcontent-pfr-c4="" class="fa fa-pencil"></i> Update
+                    </button>
+                  </div>
+                </div></slide
+              ><slide
+                _ngcontent-pfr-c4=""
+                _nghost-pfr-c3=""
+                aria-hidden="true"
+                style="width: 100%; order: 0"
+                class="item carousel-item"
+                ><div _ngcontent-pfr-c3="" class="item">
+                  <div
+                    _ngcontent-pfr-c4=""
+                    class="d-flex justify-content-center"
+                  >
+                    <img
+                      _ngcontent-pfr-c4=""
+                      src="../../../../assets/img/karp.jpg"
+                      alt="slide image"
+                      class="w-50"
+                    />
+                  </div>
+                  <div
+                    _ngcontent-pfr-c4=""
+                    class="carousel-caption d-none d-md-block"
+                    style="
+                      background-color: rgba(255, 255, 255, 0.307);
+                      margin: 0 10% 0 10%;
+                    "
+                  >
+                    <h1 _ngcontent-pfr-c4=""></h1>
+                    <br _ngcontent-pfr-c4="" />
+                    <h2 _ngcontent-pfr-c4="">1kgkg</h2>
+                    <h2 _ngcontent-pfr-c4="">30cm</h2>
+                    <br _ngcontent-pfr-c4="" />
+                    <h4 _ngcontent-pfr-c4="">Date:</h4>
+                    <h4 _ngcontent-pfr-c4="">Location:</h4>
+                    <button _ngcontent-pfr-c4="" class="btn btn-danger">
+                      <i _ngcontent-pfr-c4="" class="fa fa-trash"></i>
+                      Delete</button
+                    ><button _ngcontent-pfr-c4="" class="btn btn-primary">
+                      <i _ngcontent-pfr-c4="" class="fa fa-pencil"></i> Update
+                    </button>
+                  </div>
+                </div></slide
+              ><slide
+                _ngcontent-pfr-c4=""
+                _nghost-pfr-c3=""
+                aria-hidden="true"
+                style="width: 100%; order: 0"
+                class="item carousel-item"
+                ><div _ngcontent-pfr-c3="" class="item">
+                  <div
+                    _ngcontent-pfr-c4=""
+                    class="d-flex justify-content-center"
+                  >
+                    <img
+                      _ngcontent-pfr-c4=""
+                      src="../../../../assets/img/karp.jpg"
+                      alt="slide image"
+                      class="w-50"
+                    />
+                  </div>
+                  <div
+                    _ngcontent-pfr-c4=""
+                    class="carousel-caption d-none d-md-block"
+                    style="
+                      background-color: rgba(255, 255, 255, 0.307);
+                      margin: 0 10% 0 10%;
+                    "
+                  >
+                    <h1 _ngcontent-pfr-c4=""></h1>
+                    <br _ngcontent-pfr-c4="" />
+                    <h2 _ngcontent-pfr-c4="">1kgkg</h2>
+                    <h2 _ngcontent-pfr-c4="">70cm</h2>
+                    <br _ngcontent-pfr-c4="" />
+                    <h4 _ngcontent-pfr-c4="">Date:</h4>
+                    <h4 _ngcontent-pfr-c4="">Location:</h4>
+                    <button _ngcontent-pfr-c4="" class="btn btn-danger">
+                      <i _ngcontent-pfr-c4="" class="fa fa-trash"></i>
+                      Delete</button
+                    ><button _ngcontent-pfr-c4="" class="btn btn-primary">
+                      <i _ngcontent-pfr-c4="" class="fa fa-pencil"></i> Update
+                    </button>
+                  </div>
+                </div></slide
+              ><!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "[object Object],[object Object"
+}-->
+            </div>
+            <a
+              href="javascript:void(0);"
+              tabindex="0"
+              role="button"
+              class="left carousel-control carousel-control-prev"
+              data-bs-target="#carousel1"
+              ><span
+                aria-hidden="true"
+                class="icon-prev carousel-control-prev-icon"
+              ></span
+              ><span class="sr-only visually-hidden">Previous</span></a
+            ><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><a
+              href="javascript:void(0);"
+              tabindex="0"
+              role="button"
+              class="right carousel-control carousel-control-next"
+              data-bs-target="#carousel1"
+              ><span
+                aria-hidden="true"
+                class="icon-next carousel-control-next-icon"
+              ></span
+              ><span class="sr-only visually-hidden">Next</span></a
+            ><!--bindings={
+  "ng-reflect-ng-if": "true"
+}-->
+          </div></carousel
+        ><!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+        <h1 _ngcontent-pfr-c4="" class="text-center" style="color: white">
+          Friends
+        </h1>
+        <div _ngcontent-pfr-c4="" vocab="http://schema.org/" class="list-group">
+          <div _ngcontent-pfr-c4="" class="row">
+            <div
+              _ngcontent-pfr-c4=""
+              typeof="Person"
+              class="col-md-4"
+              style="margin-bottom: 20px"
+            >
+              <a
+                _ngcontent-pfr-c4=""
+                class="list-group-item list-group-item-action"
+                ><div _ngcontent-pfr-c4="" class="media">
+                  <img
+                    _ngcontent-pfr-c4=""
+                    src="src=../../../../assets/img/person.png"
+                    alt="person icon"
+                    class="mr-3"
+                    width="64"
+                  />
+                  <div _ngcontent-pfr-c4="" class="media-body">
+                    <h5 _ngcontent-pfr-c4="" property="name" class="mt-0">
+                      John Smith
+                    </h5>
+                    <p _ngcontent-pfr-c4="">
+                      Age: <span _ngcontent-pfr-c4="" property="age">32</span>
+                    </p>
+                    <p _ngcontent-pfr-c4="">
+                      Email:
+                      <span _ngcontent-pfr-c4="" property="email"
+                        >john@example.com</span
+                      >
+                    </p>
+                  </div>
+                </div></a
+              >
+            </div>
+            <div
+              _ngcontent-pfr-c4=""
+              typeof="Person"
+              class="col-md-4"
+              style="margin-bottom: 20px"
+            >
+              <a
+                _ngcontent-pfr-c4=""
+                class="list-group-item list-group-item-action"
+                ><div _ngcontent-pfr-c4="" class="media">
+                  <img
+                    _ngcontent-pfr-c4=""
+                    src="src=../../../../assets/img/person.png"
+                    alt="person icon"
+                    class="mr-3"
+                    width="64"
+                  />
+                  <div _ngcontent-pfr-c4="" class="media-body">
+                    <h5 _ngcontent-pfr-c4="" property="name" class="mt-0">
+                      Jane Doe
+                    </h5>
+                    <p _ngcontent-pfr-c4="">
+                      Age: <span _ngcontent-pfr-c4="" property="age">27</span>
+                    </p>
+                    <p _ngcontent-pfr-c4="">
+                      Email:
+                      <span _ngcontent-pfr-c4="" property="email"
+                        >jane@example.com</span
+                      >
+                    </p>
+                  </div>
+                </div></a
+              >
+            </div>
+            <div
+              _ngcontent-pfr-c4=""
+              typeof="Person"
+              class="col-md-4"
+              style="margin-bottom: 20px"
+            >
+              <a
+                _ngcontent-pfr-c4=""
+                class="list-group-item list-group-item-action"
+                ><div _ngcontent-pfr-c4="" class="media">
+                  <img
+                    _ngcontent-pfr-c4=""
+                    src="src=../../../../assets/img/person.png"
+                    alt="person icon"
+                    class="mr-3"
+                    width="64"
+                  />
+                  <div _ngcontent-pfr-c4="" class="media-body">
+                    <h5 _ngcontent-pfr-c4="" property="name" class="mt-0">
+                      Bob Johnson
+                    </h5>
+                    <p _ngcontent-pfr-c4="">
+                      Age: <span _ngcontent-pfr-c4="" property="age">45</span>
+                    </p>
+                    <p _ngcontent-pfr-c4="">
+                      Email:
+                      <span _ngcontent-pfr-c4="" property="email"
+                        >bob@example.com</span
+                      >
+                    </p>
+                  </div>
+                </div></a
+              >
+            </div>
+            <div
+              _ngcontent-pfr-c4=""
+              typeof="Person"
+              class="col-md-4"
+              style="margin-bottom: 20px"
+            >
+              <a
+                _ngcontent-pfr-c4=""
+                class="list-group-item list-group-item-action"
+                ><div _ngcontent-pfr-c4="" class="media">
+                  <img
+                    _ngcontent-pfr-c4=""
+                    src="src=../../../../assets/img/person.png"
+                    alt="person icon"
+                    class="mr-3"
+                    width="64"
+                  />
+                  <div _ngcontent-pfr-c4="" class="media-body">
+                    <h5 _ngcontent-pfr-c4="" property="name" class="mt-0">
+                      John Smith
+                    </h5>
+                    <p _ngcontent-pfr-c4="">
+                      Age: <span _ngcontent-pfr-c4="" property="age">32</span>
+                    </p>
+                    <p _ngcontent-pfr-c4="">
+                      Email:
+                      <span _ngcontent-pfr-c4="" property="email"
+                        >john@example.com</span
+                      >
+                    </p>
+                  </div>
+                </div></a
+              >
+            </div>
+            <div
+              _ngcontent-pfr-c4=""
+              typeof="Person"
+              class="col-md-4"
+              style="margin-bottom: 20px"
+            >
+              <a
+                _ngcontent-pfr-c4=""
+                class="list-group-item list-group-item-action"
+                ><div _ngcontent-pfr-c4="" class="media">
+                  <img
+                    _ngcontent-pfr-c4=""
+                    src="src=../../../../assets/img/person.png"
+                    alt="person icon"
+                    class="mr-3"
+                    width="64"
+                  />
+                  <div _ngcontent-pfr-c4="" class="media-body">
+                    <h5 _ngcontent-pfr-c4="" property="name" class="mt-0">
+                      Jane Doe
+                    </h5>
+                    <p _ngcontent-pfr-c4="">
+                      Age: <span _ngcontent-pfr-c4="" property="age">27</span>
+                    </p>
+                    <p _ngcontent-pfr-c4="">
+                      Email:
+                      <span _ngcontent-pfr-c4="" property="email"
+                        >jane@example.com</span
+                      >
+                    </p>
+                  </div>
+                </div></a
+              >
+            </div>
+            <div
+              _ngcontent-pfr-c4=""
+              typeof="Person"
+              class="col-md-4"
+              style="margin-bottom: 20px"
+            >
+              <a
+                _ngcontent-pfr-c4=""
+                class="list-group-item list-group-item-action"
+                ><div _ngcontent-pfr-c4="" class="media">
+                  <img
+                    _ngcontent-pfr-c4=""
+                    src="src=../../../../assets/img/person.png"
+                    alt="person icon"
+                    class="mr-3"
+                    width="64"
+                  />
+                  <div _ngcontent-pfr-c4="" class="media-body">
+                    <h5 _ngcontent-pfr-c4="" property="name" class="mt-0">
+                      Bob Johnson
+                    </h5>
+                    <p _ngcontent-pfr-c4="">
+                      Age: <span _ngcontent-pfr-c4="" property="age">45</span>
+                    </p>
+                    <p _ngcontent-pfr-c4="">
+                      Email:
+                      <span _ngcontent-pfr-c4="" property="email"
+                        >bob@example.com</span
+                      >
+                    </p>
+                  </div>
+                </div></a
+              >
+            </div>
+            <div
+              _ngcontent-pfr-c4=""
+              typeof="Person"
+              class="col-md-4"
+              style="margin-bottom: 20px"
+            >
+              <a
+                _ngcontent-pfr-c4=""
+                class="list-group-item list-group-item-action"
+                ><div _ngcontent-pfr-c4="" class="media">
+                  <img
+                    _ngcontent-pfr-c4=""
+                    src="src=../../../../assets/img/person.png"
+                    alt="person icon"
+                    class="mr-3"
+                    width="64"
+                  />
+                  <div _ngcontent-pfr-c4="" class="media-body">
+                    <h5 _ngcontent-pfr-c4="" property="name" class="mt-0">
+                      John Smith
+                    </h5>
+                    <p _ngcontent-pfr-c4="">
+                      Age: <span _ngcontent-pfr-c4="" property="age">32</span>
+                    </p>
+                    <p _ngcontent-pfr-c4="">
+                      Email:
+                      <span _ngcontent-pfr-c4="" property="email"
+                        >john@example.com</span
+                      >
+                    </p>
+                  </div>
+                </div></a
+              >
+            </div>
+            <div
+              _ngcontent-pfr-c4=""
+              typeof="Person"
+              class="col-md-4"
+              style="margin-bottom: 20px"
+            >
+              <a
+                _ngcontent-pfr-c4=""
+                class="list-group-item list-group-item-action"
+                ><div _ngcontent-pfr-c4="" class="media">
+                  <img
+                    _ngcontent-pfr-c4=""
+                    src="src=../../../../assets/img/person.png"
+                    alt="person icon"
+                    class="mr-3"
+                    width="64"
+                  />
+                  <div _ngcontent-pfr-c4="" class="media-body">
+                    <h5 _ngcontent-pfr-c4="" property="name" class="mt-0">
+                      Jane Doe
+                    </h5>
+                    <p _ngcontent-pfr-c4="">
+                      Age: <span _ngcontent-pfr-c4="" property="age">27</span>
+                    </p>
+                    <p _ngcontent-pfr-c4="">
+                      Email:
+                      <span _ngcontent-pfr-c4="" property="email"
+                        >jane@example.com</span
+                      >
+                    </p>
+                  </div>
+                </div></a
+              >
+            </div>
+            <div
+              _ngcontent-pfr-c4=""
+              typeof="Person"
+              class="col-md-4"
+              style="margin-bottom: 20px"
+            >
+              <a
+                _ngcontent-pfr-c4=""
+                class="list-group-item list-group-item-action"
+                ><div _ngcontent-pfr-c4="" class="media">
+                  <img
+                    _ngcontent-pfr-c4=""
+                    src="src=../../../../assets/img/person.png"
+                    alt="person icon"
+                    class="mr-3"
+                    width="64"
+                  />
+                  <div _ngcontent-pfr-c4="" class="media-body">
+                    <h5 _ngcontent-pfr-c4="" property="name" class="mt-0">
+                      Bob Johnson
+                    </h5>
+                    <p _ngcontent-pfr-c4="">
+                      Age: <span _ngcontent-pfr-c4="" property="age">45</span>
+                    </p>
+                    <p _ngcontent-pfr-c4="">
+                      Email:
+                      <span _ngcontent-pfr-c4="" property="email"
+                        >bob@example.com</span
+                      >
+                    </p>
+                  </div>
+                </div></a
+              >
+            </div>
+            <!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}-->
+          </div>
+        </div>
+        <!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "[object Object],[object Object"
+}-->
+      </body></app-profile
+    ><!--container-->
+  </div></app-root
+>
+<script src="runtime.js" type="module"></script>
+<script src="polyfills.js" type="module"></script>
+<script src="styles.js" defer=""></script>
+<script src="vendor.js" type="module"></script>
+<script src="main.js" type="module"></script>
